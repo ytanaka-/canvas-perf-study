@@ -33,6 +33,11 @@ button.addEventListener('click', () => {
 
 const draw = () => {
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  // background
+  ctx.save();
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.restore();
   for (let i = 0;i < pathList.length;i++) {
     const path = pathList[i];
     if (path.length < 2) {
@@ -46,6 +51,7 @@ const draw = () => {
       ctx.stroke();
     }
   }
-  window.requestAnimationFrame(draw);
+  requestAnimationFrame(draw);
 }
-window.requestAnimationFrame(draw);
+
+draw();
