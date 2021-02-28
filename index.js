@@ -16,7 +16,6 @@ const move = (event) => {
   const y = event.clientY - event.target.getBoundingClientRect().top;
   if (isDraw) {
     pathList[pathList.length-1].push({x,y})
-    console.log(pathList);
   }
 }
 const end = () => {
